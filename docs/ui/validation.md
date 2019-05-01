@@ -8,7 +8,7 @@ This document describes the different restrictions for various input fields of f
 
 | Key  | Value  | Reference/source |
 | :--- | :----- | :-------- |
-| `configMapKey` | `^(?=[\S\s]{1,253}$)[-._a-zA-Z0-9]+$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L334) |
+| `configMapKey` | `^(?=[\S\s]{1,253}$)(?!\.$)(?!\.\.[\S\s]*$)[-._a-zA-Z0-9]+$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L334) |
 | `container` | `^(?!.*--)(?!.*__)(?=.*[a-z])[a-z0-9][a-z0-9-_]*[a-z0-9]$\|^[a-z]$` | [Iguazio platform](https://github.com/iguazio/zebo/blob/development/py/services/container_provisioning/__init__.py#L670) |
 | `dns1123Label` | `^(?=[\S\s]{1,63}$)[a-z0-9]([-a-z0-9]*[a-z0-9])?$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L116) |
 | `dns1123Subdomain` | `^(?=[\S\s]{1,253}$)[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L137) |
