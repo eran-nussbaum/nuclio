@@ -8,15 +8,15 @@ This document describes the different restrictions for various input fields of f
 
 | Key  | Value  | Reference/source |
 | :--- | :----- | :-------- |
-| `configMapKey` | `^(?=[\S\s]{1,253}$)(?!\.$)(?!\.\.[\S\s]*$)[-._a-zA-Z0-9]+$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L334) |
-| `container` | `^(?!.*--)(?!.*__)(?=.*[a-z])[a-z0-9][a-z0-9-_]*[a-z0-9]$\|^[a-z]$` | [Iguazio platform](https://github.com/iguazio/zebo/blob/development/py/services/container_provisioning/__init__.py#L670) |
-| `dns1123Label` | `^(?=[\S\s]{1,63}$)[a-z0-9]([-a-z0-9]*[a-z0-9])?$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L116) |
-| `dns1123Subdomain` | `^(?=[\S\s]{1,253}$)[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L137) |
+| `configMapKey` | `^(?=[\S\s]{1,253}$)(?!\.$)(?!\.\.[\S\s]*$)[-._a-zA-Z0-9]+$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L375) |
+| `container` | `^(?!.*--)(?!.*__)(?=.*[a-z])[a-z0-9][a-z0-9-_]*[a-z0-9]$\|^[a-z]$` | [Iguazio platform](https://github.com/iguazio/zebo/blob/development/py/services/container_provisioning/__init__.py#L835) |
+| `dns1123Label` | `^(?=[\S\s]{1,63}$)[a-z0-9]([-a-z0-9]*[a-z0-9])?$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L134) |
+| `dns1123Subdomain` | `^(?=[\S\s]{1,253}$)[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L155) |
 | `dockerReference` | `^(([a-zA-Z0-9]\|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9])(\.([a-zA-Z0-9]\|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]))*(\:\d+)?\/)?[a-z0-9]+(([._]\|__\|[-]*)[a-z0-9]+)*(\/[a-z0-9]+(([._]\|__\|[-]*)[a-z0-9]+)*)*(\:[\w][\w.-]{0,127})?(\@[A-Za-z][A-Za-z0-9]*([-_+.][A-Za-z][A-Za-z0-9]*)*\:[0-9a-fA-F]{32,})?$` | [Docker](https://github.com/docker/distribution/blob/master/reference/regexp.go) |
-| `envVarName` | `^(?!\.$)(?!\.\.[\S\s]*$)[-._a-zA-Z][-._a-zA-Z0-9]*$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L318) |
+| `envVarName` | `^(?!\.$)(?!\.\.[\S\s]*$)[-._a-zA-Z][-._a-zA-Z0-9]*$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L359) |
 | `prefixedQualifiedName` | `^(?!kubernetes.io\/)(?!k8s.io\/)((?=[\S\s]{1,253}\/)([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*\/))?(?=[\S\s]{1,63}$)([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L42) |
 | `qualifiedName` | `^(?=[\S\s]{1,63}$)([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L36) |
-| `wildcardDns1123Subdomain` | `^(?=[\S\s]{1,253}$)\*\.[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L182) |
+| `wildcardDns1123Subdomain` | `^(?=[\S\s]{1,253}$)\*\.[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$` | [K8s](https://github.com/kubernetes/apimachinery/blob/master/pkg/util/validation/validation.go#L201) |
 
 ## Function Configuration Input Validation
 
