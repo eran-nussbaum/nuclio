@@ -7,6 +7,12 @@ var app = express();
 
 var previewServer = function () {
     var start = function (log, rootPath) {
+        app.use(function (request, response, next) {
+            if (_.startsWith(request.url, '/nuclio')) {
+                request.url = request.url.replace(/^\/nuclio/, '').replace('', '/');
+            }
+            next();
+        });
         app.use(serveStatic(path.resolve(__dirname, '../../' + rootPath), {
             maxAge: '1d',
             setHeaders: setCustomCacheControl

@@ -10,7 +10,7 @@
         $stateProvider
             .state('app', {
                 abstract: true,
-                url: '/',
+                url: '/nuclio/',
                 templateUrl: 'views/app/main.tpl.html',
                 resolve: {
                     namespaceData: [
@@ -274,9 +274,9 @@
             });
 
         $urlRouterProvider
-            .when('/projects/:id/functions/:functionId', '/projects/:id/functions/:functionId/code')
-            .when('/projects/:id', '/projects/:id/functions')
-            .when('/projects/', '/projects')
+            .when('/nuclio/projects/:id/functions/:functionId', '/nuclio/projects/:id/functions/:functionId/code')
+            .when('/nuclio/projects/:id', '/nuclio/projects/:id/functions')
+            .when('/nuclio/projects/', '/nuclio/projects')
 
             .otherwise(function ($injector) {
                 $injector.get('$state').go('app.projects');
